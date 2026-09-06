@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------------------
+# NEXORA — Path-based Ingress (primary demo configuration)
+#
+#   /            -> nexora-home-service     (landing portal)
+#   /pay         -> nexora-pay-service      (Nexora Pay)
+#   /movies      -> nexora-movies-service   (Nexora Movies)
+#   /travel      -> nexora-travel-service   (Nexora Travel)
+#
+# Each app is a self-contained static site whose CSS/JS use RELATIVE URLs
+# (e.g. "style.css", not "/style.css"), so once the Ingress controller
+# rewrites "/pay/style.css" -> "/style.css" for the nexora-pay-service
+# backend, assets resolve correctly under the /pay, /movies and /travel
+# prefixes without any broken links.
+#
+# Requires the NGINX Ingress Controller (ingressClassName: nginx).
+# ---------------------------------------------------------------------------
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexora-ingress
+  namespace: nexora
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          # --- Nexora Pay --------------------------------------------------
+          - path: /pay(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: nexora-pay-service
+                port:
+                  number: 80
+
+          # --- Nexora Movies -------------------------------------------------
+          - path: /movies(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: nexora-movies-service
+                port:
+                  number: 80
+
+          # --- Nexora Travel -------------------------------------------------
+          - path: /travel(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: nexora-travel-service
+                port:
+                  number: 80
+
+          # --- Nexora Home (catch-all, must stay LAST) ------------------------
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: nexora-home-service
+                port:
+                  number: 80
