@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# NEXORA MOVIES — Deployment + Service
+# Image built from ./app2  ->  rahmanuddinmd17/nexora-movies:v1
+# ---------------------------------------------------------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexora-movies-deployment
+  namespace: nexora
+  labels:
+    app: nexora-movies
+    app.kubernetes.io/part-of: nexora
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nexora-movies
+  template:
+    metadata:
+      labels:
+        app: nexora-movies
+        app.kubernetes.io/part-of: nexora
+    spec:
+      containers:
+        - name: nexora-movies
+          image: rahmanuddinmd17/nexora-movies:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 8
+            periodSeconds: 15
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexora-movies-service
+  namespace: nexora
+  labels:
+    app: nexora-movies
+    app.kubernetes.io/part-of: nexora
+spec:
+  type: ClusterIP
+  selector:
+    app: nexora-movies
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http

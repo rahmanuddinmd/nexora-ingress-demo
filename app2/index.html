@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nexora Movies — Book Tickets &amp; Events</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%239b5bff%22/><text x=%2250%25%22 y=%2266%25%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22800%22>N</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="brand" data-home-link>
+      <span class="brand-mark">N</span>
+      <span class="brand-name">Nexora <b>Movies</b></span>
+    </a>
+
+    <button class="location-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+      Hyderabad
+    </button>
+
+    <div class="search-wrap">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search movies, cinemas, events…" />
+    </div>
+
+    <nav class="top-nav">
+      <a href="#" class="active">Movies</a>
+      <a href="#">Events</a>
+      <a href="#">Offers</a>
+      <a href="#">My Tickets</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section class="hero-banner" id="heroBanner">
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <span class="hero-tag">NOW SHOWING</span>
+      <h1>THE LAST VOYAGE</h1>
+      <p class="hero-meta">Adventure • Sci-Fi • 2h 18m &nbsp;•&nbsp; <span class="rating">★ 8.7</span></p>
+      <div class="hero-actions">
+        <button class="btn btn-glow">BOOK NOW</button>
+        <button class="btn btn-outline" id="trailerBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+          WATCH TRAILER
+        </button>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <span class="active"></span><span></span><span></span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Trending Movies</h2>
+      <a class="see-all" href="#">See all</a>
+    </div>
+    <div class="movie-grid">
+
+      <article class="movie-card">
+        <div class="poster poster-1">
+          <span class="badge">SCI-FI</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>The Last Voyage</h3>
+        <p class="movie-meta">Adventure, Sci-Fi <span class="rating">★ 8.7</span></p>
+        <p class="movie-lang">English, Hindi, Telugu</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+      <article class="movie-card">
+        <div class="poster poster-2">
+          <span class="badge">ACTION</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>Neon City</h3>
+        <p class="movie-meta">Action, Thriller <span class="rating">★ 8.2</span></p>
+        <p class="movie-lang">English, Tamil</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+      <article class="movie-card">
+        <div class="poster poster-3">
+          <span class="badge">THRILLER</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>Shadow Protocol</h3>
+        <p class="movie-meta">Spy, Thriller <span class="rating">★ 7.9</span></p>
+        <p class="movie-lang">English, Hindi</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+      <article class="movie-card">
+        <div class="poster poster-4">
+          <span class="badge">SCI-FI</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>Beyond Earth</h3>
+        <p class="movie-meta">Sci-Fi, Drama <span class="rating">★ 8.5</span></p>
+        <p class="movie-lang">English</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+      <article class="movie-card">
+        <div class="poster poster-5">
+          <span class="badge">CRIME</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>Midnight Run</h3>
+        <p class="movie-meta">Crime, Drama <span class="rating">★ 8.0</span></p>
+        <p class="movie-lang">Hindi, Telugu</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+      <article class="movie-card">
+        <div class="poster poster-6">
+          <span class="badge">SCI-FI</span>
+          <button class="play-fab">▶</button>
+        </div>
+        <h3>Quantum Storm</h3>
+        <p class="movie-meta">Sci-Fi, Action <span class="rating">★ 8.9</span></p>
+        <p class="movie-lang">English, Hindi</p>
+        <button class="btn-book">Book</button>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Upcoming Movies</h2>
+    </div>
+    <div class="carousel" id="upcomingCarousel">
+      <div class="upcoming-card"><div class="poster poster-u1"></div><strong>Solar Drift</strong><span>Releases 2 Oct</span></div>
+      <div class="upcoming-card"><div class="poster poster-u2"></div><strong>Iron Horizon</strong><span>Releases 9 Oct</span></div>
+      <div class="upcoming-card"><div class="poster poster-u3"></div><strong>Velvet Noir</strong><span>Releases 16 Oct</span></div>
+      <div class="upcoming-card"><div class="poster poster-u4"></div><strong>Frostline</strong><span>Releases 23 Oct</span></div>
+      <div class="upcoming-card"><div class="poster poster-u5"></div><strong>Echo Chamber</strong><span>Releases 30 Oct</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Select Cinema</h2></div>
+    <div class="cinema-card">
+      <div class="cinema-info">
+        <h3>Nexora Cinemas — Orion Mall</h3>
+        <p>4.6 ★ &nbsp;•&nbsp; 3.2 km away &nbsp;•&nbsp; Dolby Atmos, Recliner Seats</p>
+      </div>
+      <div class="showtimes">
+        <button class="time-pill">10:30 AM <small>184 seats</small></button>
+        <button class="time-pill">01:45 PM <small>96 seats</small></button>
+        <button class="time-pill hot">05:15 PM <small>32 seats</small></button>
+        <button class="time-pill">09:00 PM <small>210 seats</small></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Select Your Seats</h2>
+      <span class="now-booking" id="nowBooking">Booking: The Last Voyage</span>
+    </div>
+    <div class="seat-demo card-glass">
+      <div class="screen">SCREEN</div>
+      <div class="seat-grid" id="seatGrid"></div>
+      <div class="seat-legend">
+        <span><i class="chip avail"></i> Available</span>
+        <span><i class="chip selected"></i> Selected</span>
+        <span><i class="chip premium"></i> Premium</span>
+        <span><i class="chip booked"></i> Booked</span>
+      </div>
+      <div class="seat-confirm-row">
+        <span id="seatSummary">Select seats to continue</span>
+        <button class="btn-book btn-confirm" id="confirmBookingBtn" disabled>Confirm Booking</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section class="section">
+      <div class="section-head"><h2>Offers</h2></div>
+      <div class="offers-stack">
+        <div class="offer-card offer-1"><strong>Weekend Movie Offer</strong><span>Flat 20% off on weekend shows</span></div>
+        <div class="offer-card offer-2"><strong>Buy 2 Get Popcorn Free</strong><span>Valid on all Nexora Cinemas</span></div>
+        <div class="offer-card offer-3"><strong>20% Cashback with Nexora Pay</strong><span>Pay via Nexora Pay wallet</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>My Tickets</h2></div>
+      <div class="ticket card-glass" id="ticketCard">
+        <div class="ticket-main">
+          <h3 id="ticketMovie">The Last Voyage</h3>
+          <div class="ticket-grid">
+            <div><small>DATE</small><strong id="ticketDate">12 Sep</strong></div>
+            <div><small>TIME</small><strong id="ticketTime">05:15 PM</strong></div>
+            <div><small>SCREEN</small><strong>4</strong></div>
+            <div><small>SEAT</small><strong id="ticketSeat">G12, G13</strong></div>
+          </div>
+        </div>
+        <div class="ticket-stub">
+          <div class="qr-placeholder"></div>
+          <small>Nexora Cinemas · Orion Mall</small>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="app-footer">
+    <span>NEXORA MOVIES · Part of the Nexora Digital Ecosystem</span>
+    <span class="pod-badge" id="podBadge">Loading pod info…</span>
+  </footer>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

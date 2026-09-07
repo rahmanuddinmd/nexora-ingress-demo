@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXORA — Everything You Need. One Digital World.</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23161029%22/><text x=%2250%25%22 y=%2266%25%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22800%22>N</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2.4"/><path d="M2 10h20"/><circle cx="17" cy="14.6" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-clapper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 20.5 5.3l.9 4.2L3.8 13.2Z"/><rect x="3" y="10.5" width="18" height="9.5" rx="1.6"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M2 12 22 4 14 22l-2-8-8-2Z"/></symbol>
+</svg>
+
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">N</span>
+      <span class="brand-name">NEXORA</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/pay" data-app-link="pay">Pay</a>
+      <a href="/movies" data-app-link="movies">Movies</a>
+      <a href="/travel" data-app-link="travel">Travel</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section class="hero">
+    <span class="eyebrow">ONE ECOSYSTEM · THREE EXPERIENCES</span>
+    <h1>Welcome to <span class="grad">NEXORA</span></h1>
+    <p class="tagline">Everything You Need.<br>One Digital World.</p>
+    <p class="sub">Payments, entertainment and travel — three independently deployed applications, unified behind a single Kubernetes Ingress.</p>
+  </section>
+
+  <section class="apps-grid">
+
+    <a href="/pay" class="app-card app-pay" data-app-link="pay">
+      <div class="app-card-glow"></div>
+      <div class="app-icon"><svg width="30" height="30"><use href="#i-wallet"/></svg></div>
+      <h2>NEXORA PAY</h2>
+      <p>Payments • Recharge • Bills</p>
+      <span class="cta">OPEN NEXORA PAY <i>→</i></span>
+    </a>
+
+    <a href="/movies" class="app-card app-movies" data-app-link="movies">
+      <div class="app-card-glow"></div>
+      <div class="app-icon"><svg width="30" height="30"><use href="#i-clapper"/></svg></div>
+      <h2>NEXORA MOVIES</h2>
+      <p>Movies • Events • Tickets</p>
+      <span class="cta">EXPLORE MOVIES <i>→</i></span>
+    </a>
+
+    <a href="/travel" class="app-card app-travel" data-app-link="travel">
+      <div class="app-card-glow"></div>
+      <div class="app-icon"><svg width="30" height="30"><use href="#i-plane"/></svg></div>
+      <h2>NEXORA TRAVEL</h2>
+      <p>Flights • Hotels • Holidays</p>
+      <span class="cta">START TRAVELLING <i>→</i></span>
+    </a>
+
+  </section>
+
+  <section class="architecture">
+    <div class="arch-head">
+      <h3>How This Demo Is Wired Together</h3>
+      <p>Each card above is routed by <strong>NGINX Ingress</strong> to its own independent Kubernetes Service &amp; Deployment.</p>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-node arch-user">User Browser</div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-node arch-ingress">NGINX Ingress Controller</div>
+      <div class="arch-arrow">↓ path-based routing</div>
+      <div class="arch-row">
+        <div class="arch-branch">
+          <span class="arch-path">/</span>
+          <div class="arch-node arch-svc svc-home">nexora-home-service</div>
+        </div>
+        <div class="arch-branch">
+          <span class="arch-path">/pay</span>
+          <div class="arch-node arch-svc svc-pay">nexora-pay-service</div>
+        </div>
+        <div class="arch-branch">
+          <span class="arch-path">/movies</span>
+          <div class="arch-node arch-svc svc-movies">nexora-movies-service</div>
+        </div>
+        <div class="arch-branch">
+          <span class="arch-path">/travel</span>
+          <div class="arch-node arch-svc svc-travel">nexora-travel-service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <span>NEXORA · Everything You Need. One Digital World.</span>
+    <span class="pod-badge" id="podBadge">Loading pod info…</span>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
