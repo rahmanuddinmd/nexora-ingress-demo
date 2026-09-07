@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # NEXORA TRAVEL — Deployment + Service
-# Image built from ./app3  ->  rahmanuddinmd17/nexora-travel:v1
+# Image built from ./app3  ->  rahmanuddinmd17/nexora-travel:v3
 # ---------------------------------------------------------------------------
 apiVersion: apps/v1
 kind: Deployment
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: nexora-travel
-          image: rahmanuddinmd17/nexora-travel:v1
+          image: rahmanuddinmd17/nexora-travel:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

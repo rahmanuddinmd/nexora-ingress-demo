@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # NEXORA HOME (landing portal) — Deployment + Service
-# Image built from ./landing  ->  rahmanuddinmd17/nexora-home:v1
+# Image built from ./landing  ->  rahmanuddinmd17/nexora-home:v3
 # ---------------------------------------------------------------------------
 apiVersion: apps/v1
 kind: Deployment
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: nexora-home
-          image: rahmanuddinmd17/nexora-home:v1
+          image: rahmanuddinmd17/nexora-home:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

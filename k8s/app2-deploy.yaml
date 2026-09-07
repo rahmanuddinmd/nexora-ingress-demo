@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # NEXORA MOVIES — Deployment + Service
-# Image built from ./app2  ->  rahmanuddinmd17/nexora-movies:v1
+# Image built from ./app2  ->  rahmanuddinmd17/nexora-movies:v3
 # ---------------------------------------------------------------------------
 apiVersion: apps/v1
 kind: Deployment
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: nexora-movies
-          image: rahmanuddinmd17/nexora-movies:v1
+          image: rahmanuddinmd17/nexora-movies:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

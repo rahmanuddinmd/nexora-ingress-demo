@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # NEXORA PAY — Deployment + Service
-# Image built from ./app1  ->  rahmanuddinmd17/nexora-pay:v1
+# Image built from ./app1  ->  rahmanuddinmd17/nexora-pay:v3
 # ---------------------------------------------------------------------------
 apiVersion: apps/v1
 kind: Deployment
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: nexora-pay
-          image: rahmanuddinmd17/nexora-pay:v1
+          image: rahmanuddinmd17/nexora-pay:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
